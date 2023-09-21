@@ -18,10 +18,10 @@ const server = http.createServer((req, res) => {
         email: 'vitor.teste@email.com',
         age: 24
     })
-    return res.end('CREATE users')
+    return res.writeHead(201).end()
    }
 
-    return res.end('Server is running on port 3333')
+    return res.writeHead(404).end('Method or route not found.')
 })
 //localhost:3333
 server.listen(3333) 
