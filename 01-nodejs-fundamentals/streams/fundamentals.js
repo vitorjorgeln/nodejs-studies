@@ -31,7 +31,6 @@ class InvertPositiveToNegativeStream extends Transform {
     }
 }
 
-
 new OneToHundredStream()
 .pipe(new InvertPositiveToNegativeStream())
 .pipe(new MultiplyByTenStream())
