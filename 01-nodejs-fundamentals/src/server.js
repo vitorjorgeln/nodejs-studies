@@ -18,12 +18,12 @@ const server = http.createServer(async (req, res) => {
     if (method == 'POST' && url == '/users') {
         const { name, email, age } = req.body
 
-        const user = ({
+        const user = {
             id: 1,
             name,
             email,
             age
-        })
+        }
 
         database.insert('users', user)
         return res.writeHead(201).end()
