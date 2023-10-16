@@ -43,4 +43,12 @@ export class Database {
             this.persist()
         }
     }
+
+    update(table,id, data) {
+        let rowIndex = this.database[table].findIndex(row => row.id === id)
+        if(rowIndex > -1){
+            this.database[table][rowIndex] = { id, ...data }
+            this.persist()
+        }
+    }
 }
